@@ -2,6 +2,9 @@
 *.pot
 *.pyc
 *.svn
+*.sqlite3
+*.pyc
+*.output
 .svn
 local_settings.py
 nohup.out

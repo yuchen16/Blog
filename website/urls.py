@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^about/$',About),
 
     url(r'^accounts/',include('UserManage.urls' )),
+    url(r'^accounts/',include('Article.urls' )),
 
     #static
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT,}),

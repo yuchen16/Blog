@@ -25,5 +25,5 @@ urlpatterns = patterns('Article.views',
     # url(r'^permission/delete/(?P<ID>\d+)/$', 'permission.DeletePermission', name='deletepermissionurl'),
 
 
-    url(r'^$', 'manager.adminArtticleList', name='adminartlisturl'),
+    url(r'^artmag/$', 'manager.adminArticleList', name='adminartlisturl'),
 )

@@ -7,7 +7,7 @@ from Article.models import Article
 
 
 
-def adminArtticleList(request):
+def adminArticleList(request):
     '''管理后台 文章列表'''
     articles = Article.objects.all()
 

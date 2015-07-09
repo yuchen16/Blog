@@ -8,3 +8,4 @@
 .svn
 local_settings.py
 nohup.out
+db.sqlite3

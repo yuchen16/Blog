@@ -12,3 +12,7 @@ def adminArticleList(request):
     articles = Article.objects.all()
 
     return render_to_response('Article/admin.article.list.html', locals(), RequestContext(request))
+
+def editArticle(request):
+    '''edit'''
+    return render_to_response('Article/admin.edit.article.html', locals(), RequestContext(request))

@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render_to_response,RequestContext
 
 from Article.models import Article
+from Article.forms import editArticleForm
 
 
 
@@ -15,4 +16,18 @@ def adminArticleList(request):
 
 def editArticle(request):
     '''edit'''
-    return render_to_response('Article/admin.edit.article.html', locals(), RequestContext(request))
+    if request.method == "POST":
+        forms = editArticleForm(request.POST)
+        if forms.is_valid():
+            froms.save()
+            return HttpResponseRedirect(reverse('adminartlisturl'))
+
+    else:
+        forms = editArticleForm()
+
+    kwvars = {
+        'forms' = forms,
+        'request' = request,
+    }
+
+    return render_to_response('Article/admin.edit.article.html', kwargs, RequestContext(request))

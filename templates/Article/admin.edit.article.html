@@ -27,6 +27,7 @@
     </div> -->
 
     <form class="form-horizontal" role="form" action={% url "editarturl" %} method="POST" >
+    {% csrf_token %}
 
         <div class="form-group">
             <label class="control-label col-md-1">{{form.title.label}}</label>
@@ -36,7 +37,9 @@
             <div class="col-md-offset-1 col-md-10">
                     {{form.title.errors}}
             </div>
-
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-1">{{form.content.label}}</label>
             <div>
                 <textarea id='textarea1' style='height:200px; width:100%;'>
                     {{ form.content }}

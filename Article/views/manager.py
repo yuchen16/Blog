@@ -30,4 +30,4 @@ def editArticle(request):
         'request' : request,
     }
 
-    return render_to_response('Article/admin.edit.article.html', kwargs, RequestContext(request))
+    return render_to_response('Article/admin.edit.article.html', kwvars, RequestContext(request))

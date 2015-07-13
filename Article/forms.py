@@ -1,3 +1,4 @@
+#coding=utf-8
 
 from django import forms
 from Article.models import Article
@@ -6,15 +7,15 @@ class editArticleForm(forms.ModelForm):
     '''编辑文章表单'''
     class Meta:
         model = Article
-        fields = ['title', 'group', 'instime', 'uptime', 'content', 'tags', 'author']
+        fields = ('title', 'group', 'content', 'tags', 'author')
         widgets = {
             'title' : forms.TextInput(attrs={'class':'form-control'}),
             'group' : forms.TextInput(attrs={'class':'form-control'}),
-            'instime' : forms.DateTimeInput(attrs={'class':'form-control'}),
-            'uptime' : forms.DateTimeInput(attrs={'class':'form-control'}),
-            'content' : forms.TextArea(attrs={'class':'list-inline'}),
-            'tags' : forms.TextArea(attrs={'class':'form-control'}),
-            'author' : forms.TextArea(attrs={'class':'form-control'}),
+            #'instime' : forms.DateTimeInput(attrs={'class':'form-control'}),
+            #'uptime' : forms.DateTimeInput(attrs={'class':'form-control'}),
+            'content' : forms.TextInput(attrs={'class':'list-inline'}),
+            'tags' : forms.TextInput(attrs={'class':'form-control'}),
+            'author' : forms.TextInput(attrs={'class':'form-control'}),
         }
 
     def __init__(self,*args,**kwargs):
@@ -23,8 +24,7 @@ class editArticleForm(forms.ModelForm):
         self.fields['content'].label=u'正 文'
         self.fields['content'].error_messages={'required':u'请输入文章正文'}
         # self.fields['group'].error_messages={'required':u'请输入分组'}
-        # self.fields['instime'].label=u'插入时间'
-        # self.fields['uptime'].error_messages={'required':u'请输入密码'}
+        #self.fields['instime'].label=u'插入时间'
         # self.fields['email'].label=u'邮 箱'
         # self.fields['email'].error_messages={'required':u'请输入邮箱','invalid':u'请输入有效邮箱'}
         # self.fields['nickname'].label=u'姓 名'

@@ -26,8 +26,8 @@ def editArticle(request):
         forms = editArticleForm()
 
     kwvars = {
-        'forms' = forms,
-        'request' = request,
+        'forms' : forms,
+        'request' : request,
     }
 
     return render_to_response('Article/admin.edit.article.html', kwargs, RequestContext(request))

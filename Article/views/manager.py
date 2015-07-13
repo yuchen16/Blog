@@ -17,16 +17,16 @@ def adminArticleList(request):
 def editArticle(request):
     '''edit'''
     if request.method == "POST":
-        forms = editArticleForm(request.POST)
-        if forms.is_valid():
-            froms.save()
+        form = editArticleForm(request.POST)
+        if form.is_valid():
+            form.save()
             return HttpResponseRedirect(reverse('adminartlisturl'))
 
     else:
-        forms = editArticleForm()
+        form = editArticleForm()
 
     kwvars = {
-        'forms' : forms,
+        'form' : form,
         'request' : request,
     }
 

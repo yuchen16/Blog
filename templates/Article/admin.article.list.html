@@ -33,16 +33,9 @@
                     <td>{{ i.author|default:"----" }}</td>
                     <td>{{ i.intime }}</td>
                     <td>{{ i.uptime }}</td>
-                    <td>
-                        {% if i.is_active %}
-                            <span class="label label-success">启用</span>
-                        {% else %}
-                            <span class="label label-default">禁用</span>
-                        {% endif %}
-                    </td>
                     <td class="host_buttom">
-                        <a class="btn btn-warning btn-xs"  href={% url "edituserurl" i.id %} onclick="return confirm('是否确认编辑？')">编辑</a>
-                        <a class="btn btn-danger btn-xs" href={% url "deleteuserurl" i.id %} onclick="return confirm('是否确认删除？')">删除</a>
+                        <a class="btn btn-warning btn-xs"  href={% url "editarturl" i.id %} onclick="return confirm('是否确认编辑？')">编辑</a>
+                        <a class="btn btn-danger btn-xs" href={% url "deletearturl" i.id %} onclick="return confirm('是否确认删除？')">删除</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -23,6 +23,7 @@ SECRET_KEY = '28ta%!1(r3z17!xq4nh6-5!u_s-v37z!f#0!zt)jy61zwp4)a9'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+INTERNAL_IPS = ('113.89.185.85',)
 
 ALLOWED_HOSTS = []
 
@@ -36,11 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'debug_toolbar',
     'UserManage',
 	'Article',
 )
 
 MIDDLEWARE_CLASSES = (
+	'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,3 +122,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 #TEMPLATE zh_CN
 FILE_CHARSET='utf-8'
 DEFAULT_CHARSET='utf-8'
+
+DEBUG_TOOLBAR_CONFIG={
+	'JQUERY_URL' : '//cdn.bootcss.com/jquery/2.1.4/jquery.js',
+}

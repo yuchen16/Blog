@@ -26,5 +26,7 @@ urlpatterns = patterns('Article.views',
 
 
     url(r'^artmag/$', 'manager.adminArticleList', name='adminartlisturl'),
-    url(r'^artmag/edit/$', 'manager.editArticle', name='editarturl'),
+    #url(r'^artmag/edit/$', 'manager.editArticle', name='editarturl'),
+    url(r'^artmag/edit/(?P<artid>\d+)/$', 'manager.editArticle', name='editarturl'),
+    url(r'^artmag/delete/(?P<artid>\d+)/$', 'manager.delArticle', name='deletearturl'),
 )

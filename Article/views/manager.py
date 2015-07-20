@@ -15,7 +15,7 @@ def adminArticleList(request):
 
     return render_to_response('Article/admin.article.list.html', locals(), RequestContext(request))
 
-def editArticle(request):
+def editArticle(request, artid):
     '''edit'''
     if request.method == "POST":
         form = editArticleForm(request.POST)
@@ -32,3 +32,12 @@ def editArticle(request):
     }
 
     return render_to_response('Article/admin.edit.article.html', kwvars, RequestContext(request))
+
+def delArticle(request, artid):
+	'''del article'''
+	article = Article.objects.get(pk=int(artid))
+	if article:
+		article.delete()
+
+	return HttpResponseRedirect(reverse('adminartlisturl'))
+

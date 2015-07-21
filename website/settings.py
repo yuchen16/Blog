@@ -126,3 +126,10 @@ DEFAULT_CHARSET='utf-8'
 DEBUG_TOOLBAR_CONFIG={
 	'JQUERY_URL' : '//cdn.bootcss.com/jquery/2.1.4/jquery.js',
 }
+
+
+logging.basicConfig(
+level = logging.DEBUG,
+format = '%(asctiome)s %(levelname)s %(module)s.%(funcName)s Line:%(lineno)d%(message)s',
+filename = BASE_DIR+"log/run.log",
+)

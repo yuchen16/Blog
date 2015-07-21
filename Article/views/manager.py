@@ -24,7 +24,7 @@ def editArticle(request):
         form = editArticleForm(request.POST)
         if form.is_valid():
             form.save()
-            logger.info(form.cleaned_data())
+            logger.info(form.cleaned_data)
             return HttpResponseRedirect(reverse('adminartlisturl'))
 
     else:

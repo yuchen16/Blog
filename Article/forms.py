@@ -13,7 +13,7 @@ class editArticleForm(forms.ModelForm):
             'group' : forms.TextInput(attrs={'class':'form-control'}),
             #'instime' : forms.DateTimeInput(attrs={'class':'form-control'}),
             #'uptime' : forms.DateTimeInput(attrs={'class':'form-control'}),
-            'content' : forms.TextInput(attrs={'class':'list-inline'}),
+            'content' : forms.Textarea(attrs={'class':'list-inline'}),
             'tags' : forms.TextInput(attrs={'class':'form-control'}),
             'author' : forms.TextInput(attrs={'class':'form-control'}),
         }

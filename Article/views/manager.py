@@ -6,17 +6,21 @@ from django.core.urlresolvers import reverse
 
 from Article.models import Article
 from Article.forms import editArticleForm
+import logging
 
 
+logger = logging.getLogger(__name__)
 
 def adminArticleList(request):
     '''管理后台 文章列表'''
+    logger.info('show article list ...')
     articles = Article.objects.all()
 
     return render_to_response('Article/admin.article.list.html', locals(), RequestContext(request))
 
-def editArticle(request, artid):
+def editArticle(request):
     '''edit'''
+    logging.info('xxxxxxxxxxxxxxx')
     if request.method == "POST":
         form = editArticleForm(request.POST)
         if form.is_valid():

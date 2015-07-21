@@ -5,27 +5,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- 
-    <div>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="请输入标题" aria-describedby="basic-addon2">
-        </div>
-
-        <hr>
-
-        <textarea id='textarea1' style='height:200px; width:100%;'></textarea>
-
-        <textarea id='textareaValue' style='height:150px; width:100%; display:none;'></textarea> 
-
-    </div>
-
- --><!--     <div>
-        <div class="btn-group" role="group" aria-label="确认或取消">
-          <button type="button" class="btn btn-default">取消</button>
-          <button type="button" class="btn btn-default">提交</button>
-        </div>        
-    </div> -->
-
     <form id="editText" class="form-horizontal" role="form" action={% url "editarturl" %} method="POST" >
     {% csrf_token %}
 

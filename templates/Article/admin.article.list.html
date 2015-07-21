@@ -9,6 +9,7 @@
         <div class="btn-group">
             {% url "editarturl" as theaddarticleurl %}
             <a class="btn btn-default {%if request.path = theaddarticleurl%} active {%endif%}" href={{ theaddarticleurl }}><span class="glyphicon glyphicon-edit"></span>添加文章</a>
+            
             {% url "listarticleurl" as thelistarticleurl%}
             <a class="btn btn-default {%if request.path = thelistarticleurl%} active {%endif%}" href={{ thelistarticleurl }}><span class="glyphicon glyphicon-list"></span>文章列表</a>
         </div>

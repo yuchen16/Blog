@@ -3,6 +3,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render_to_response,RequestContext
 from django.core.urlresolvers import reverse
+from website.common.CommonPaginator import SelfPaginator
 
 from Article.models import Article
 from Article.forms import editArticleForm
@@ -15,8 +16,15 @@ def adminArticleList(request):
     '''管理后台 文章列表'''
     logger.info('show article list ...')
     articles = Article.objects.all()
+    #分页功能
+    lst = SelfPaginator(request, articles, 20)
 
-    return render_to_response('Article/admin.article.list.html', locals(), RequestContext(request))
+    kwvars = {
+        'lPage':lst,
+        'request':request,
+    }
+
+    return render_to_response('Article/admin.article.list.html', kwvars, RequestContext(request))
 
 def editArticle(request):
     '''edit'''

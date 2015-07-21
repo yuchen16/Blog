@@ -20,11 +20,11 @@ def adminArticleList(request):
 
 def editArticle(request):
     '''edit'''
-    logging.info('xxxxxxxxxxxxxxx')
     if request.method == "POST":
         form = editArticleForm(request.POST)
         if form.is_valid():
             form.save()
+            logger.info(form.cleaned_data())
             return HttpResponseRedirect(reverse('adminartlisturl'))
 
     else:

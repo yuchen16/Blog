@@ -47,8 +47,8 @@
         <hr>
 
         <div class="form-group">
-            <div class="col-md-offset-1 col-md-10">
-                <button type="submit" class="btn btn-danger btn-sm">新 增</button>
+            <div class="col-md-offset-11">
+                <button type="submit" class="btn btn-success">新 增</button>
             </div>
         </div>
 
@@ -60,14 +60,7 @@
         var frm = $('#editText');
         $(function(){
             $('#id_content').wangEditor();
-
-            //获取源码值
-            var $textareaValue = $('#textareaValue');
-            $('#btnGetValue').click(function(e){
-                var html = $('#textarea1').val();
-                $textareaValue.show();
-                $textareaValue.val(html);
-            });
+           
         });
     </script>
 {% endblock %}

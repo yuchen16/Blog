@@ -23,7 +23,7 @@ SECRET_KEY = '28ta%!1(r3z17!xq4nh6-5!u_s-v37z!f#0!zt)jy61zwp4)a9'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-INTERNAL_IPS = ('113.89.185.85',)
+INTERNAL_IPS = ('113.89.185.85','58.60.253.74')
 
 ALLOWED_HOSTS = []
 

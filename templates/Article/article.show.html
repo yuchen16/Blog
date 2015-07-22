@@ -6,7 +6,58 @@
 
 {% block content %}
 
-	<h1>  </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1> {{ article.title }} </h1>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+                {{article.content|safe}}
+            </div>
+
+            <div class="col-md-4">
+                <p class="text-center"><strong>Something should be here!</strong></p>
+                <p class="text-center">Something should be here!</p>
+                <p class="text-center">Something should be here!</p>
+                <p class="text-center">Something should be here!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-hover">
+                    <th>Name</th><th>Age</th><th>Sex</th><th>Country</th>
+                    <tr>
+                        <td>Liulk</td>
+                        <td>22</td>
+                        <td>Man</td>
+                        <td>China</td>
+                    </tr>
+                    <tr>
+                        <td>Ksir</td>
+                        <td>21</td>
+                        <td>Man</td>
+                        <td>Japan</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>51</td>
+                        <td>Man</td>
+                        <td>American</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
     
 
 {% endblock %}

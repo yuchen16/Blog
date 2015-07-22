@@ -28,7 +28,7 @@
         </tr>
             {% for i in lPage%}
                 <tr style="font-size: 13px;">
-                    <td>{{ i.title}}</td>
+                    <td><a href={% url "artpreshowurl" i.id%}>{{ i.title}}</a></td>
                     <td>{{ i.group|default:"----" }}</td>
                     <td>{{ i.author|default:"----" }}</td>
                     <td>{{ i.intime }}</td>
@@ -41,5 +41,7 @@
             {% endfor %}
 
         </table>
+
+    {% include "common/paginator.html" %}
 
 {% endblock %}

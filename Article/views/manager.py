@@ -17,7 +17,7 @@ def adminArticleList(request):
     logger.info('show article list ...')
     articles = Article.objects.all()
     #分页功能
-    lst = SelfPaginator(request, articles, 5)
+    lst = SelfPaginator(request, articles, 10)
 
     kwvars = {
         'lPage':lst,

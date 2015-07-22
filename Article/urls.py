@@ -27,6 +27,7 @@ urlpatterns = patterns('Article.views',
 
     url(r'^artmag/$', 'manager.adminArticleList', name='adminartlisturl'),
     url(r'^artmag/edit/$', 'manager.editArticle', name='editarturl'),
+    url(r'^artmag/artreedit/(?P<artid>\d+)/$', 'manager.reEditArticle', name='reeditarturl'),
     url(r'^artmag/delete/(?P<artid>\d+)/$', 'manager.delArticle', name='deletearturl'),
     url(r'^artmag/artshow/(?P<artid>\d+)/$', 'article.articlePreshow', name='artpreshowurl'),
 )

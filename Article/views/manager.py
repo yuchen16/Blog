@@ -53,3 +53,13 @@ def delArticle(request, artid):
 
 	return HttpResponseRedirect(reverse('adminartlisturl'))
 
+def reEditArticle(request, artid):
+    '''再编辑'''
+    article = Article.objects.get(pk=int(artid))
+
+    form = editArticleForm(instance=article)
+    kwvars = {
+        'form' : form,
+        'request' : request,
+    }
+    return render_to_response('Article/admin.edit.article.html', kwvars, RequestContext(request))
